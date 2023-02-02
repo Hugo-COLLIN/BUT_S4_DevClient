@@ -1,10 +1,11 @@
 #intelliJ
+*.iml
 .idea
 *.idea
 .out
 out
 .target
-*.iml
+
 
 # Ini files
 *.ini
