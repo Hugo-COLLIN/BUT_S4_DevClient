@@ -60,12 +60,15 @@ window.addEventListener("DOMContentLoaded", () => {
 //Ex4
 function clearList (parentNode)
 {
+    /*
     var child = parentNode.lastElementChild;
     while (child)
     {
         parentNode.removeChild(child);
         child = parentNode.lastElementChild;
     }
+     */
+    parentNode.innerHTML = "";
 }
 
 window.addEventListener("DOMContentLoaded", () => {
