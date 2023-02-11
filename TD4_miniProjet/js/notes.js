@@ -46,6 +46,28 @@ class NoteView
 }
 
 /*
+--- Objet noteListMenuView ---
+ */
+let noteListMenuView = {
+    displayItem(note){
+        let section_noteList = document.querySelector("#noteListMenu");
+        let p = document.createElement("div");
+        p.setAttribute("class","note_list_item");
+
+        let titre = note.titre;
+        if(note.titre === ""){
+            titre = "Titre";
+        }
+
+
+        let titre_noteList = document.createTextNode(titre);
+        p.appendChild(titre_noteList);
+        section_noteList.appendChild(p);
+
+    }
+}
+
+/*
 --- Objet noteFormView ---
  */
 let noteFormView = {
@@ -78,7 +100,7 @@ let noteFormView = {
  */
 let mainMenuView = {
     addHandler() {
-        console.log('click add');
+        console.log('Clic ajout note');
         noteFormView.display();
     },
     init(){
@@ -93,16 +115,19 @@ let mainMenuView = {
 --- Objet etatGlobal ---
  */
 let etatGlobal = {
-    //listNote : null,
-    //indexNoteCourante : null,
+    listNote : null,
+    indexNoteCourante : null,
 
     init(){
         mainMenuView.init();
-        /*etatGlobal.listNote = new NoteList();
+        etatGlobal.listNote = new NoteList();
+
+
         document.querySelector('#noteListMenu').onclick =
-            function (e){
+            function (e)
+            {
                 let nodes = e.currentTarget.childNodes;
-                for(let i = 0; i < nodes.length ; i++){
+                for (let i = 0 ; i < nodes.length ; i++){
                     nodes[i].classList.remove('note_list_item-selected');
                     if(nodes[i] === e.target){
                         let note = etatGlobal.listNote.getNoteById(i);
@@ -112,7 +137,33 @@ let etatGlobal = {
                 }
                 e.target.classList.add('note_list_item-selected');
 
-            };*/
+            };
+    }
+}
+
+
+/*
+--- Classe NoteListe ---
+ */
+class NoteList
+{
+    constructor() {
+        this.listeNotes = [];
+    }
+
+    addNote(note)
+    {
+        this.listeNotes.push(note);
+    }
+
+    getNoteById (i)
+    {
+        return this.listeNotes[i];
+    }
+
+    getList()
+    {
+        return this.listeNotes;
     }
 }
 
