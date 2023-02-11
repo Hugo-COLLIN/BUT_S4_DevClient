@@ -1,61 +1,120 @@
+'use strict'
+
 /*
 --- Classe Note ---
  */
 
-function Note (titre, contenu)
+class Note
 {
-    this.titre = titre;
-    this.contenu = contenu;
-    this.date_creation = new Date();
+    constructor(titre, contenu) {
+        this.titre = titre;
+        this.contenu = contenu;
+        this.date_creation = new Date();
+    }
+    setTitre(titre)
+    {
+        this.titre = titre;
+    }
+    setContenu(texte)
+    {
+        this.contenu = contenu;
+    }
 }
 
-Note.prototype.setTitle = function (titre) {
-    this.titre = titre;
-}
-
-Note.prototype.setContent = function (contenu) {
-    this.contenu = contenu;
-}
 
 /*
 --- Classe NoteView ---
  */
-
-function NoteView (note)
+class NoteView
 {
-    this.noteMd = note;
-    this.noteHtml = "";
-}
-
-NoteView.prototype.convMd2Html = function ()
-{
-    let conv = new showdown.Converter();
-    this.noteHtml = conv.makeHtml(this.noteMd.contenu);
-}
-
-NoteView.prototype.HtmlIntoDom = function ()
-{
-    let elt = document.querySelector("#currentNoteView");
-    elt.innerHTML(this.noteHtml);
+    constructor(note)
+    {
+        this.note = note;
+        this.noteHtml = "";
+    }
+    convertirMd2Html()
+    {
+        let conv = new showdown.Converter();
+        return  conv.makeHtml(this.note.contenu);
+    }
+    afficherHtml()
+    {
+        this.noteHtml = this.convertirMd2Html();
+        document.querySelector('#currentNoteView').innerHTML = `<h1>${this.note.titre}
+        </h1> <p>${this.noteHtml}</p>`;
+    }
 }
 
 /*
---- Objet NoteFormView ---
+--- Objet noteFormView ---
  */
-
-
 let noteFormView = {
-    form: document.querySelector(".create_edit_note"),
+    form: document.querySelector(".create_edit_note").classList,
 
-    display: function () {
-        this.form.classList.remove("create_edit_note-hidden");
+    display() {
+        this.form.remove("create_edit_note-hidden");
     },
 
-    hide: function () {
-        this.form.classList.add("create_edit_note-hidden");
+    hide() {
+        this.form.add("create_edit_note-hidden");
     },
 
-    validate: function () {
+    validate() {
+        let titre = document.querySelector('#form_add_note_title').value;
+        let contenu = document.querySelector('#form_add_note_text').value;
+        let note = new Note(titre, contenu);
+
+        //etatGlobal.indexNoteCourante = etatGlobal.listNote.addNote(note);
+        //noteListMenuView.displayItem(note);
+
+        let vueNote = new NoteView(note);
+        vueNote.afficherHtml()
         //form.
     }
 };
+
+/*
+--- Objet mainMenuView ---
+ */
+let mainMenuView = {
+    addHandler() {
+        console.log('click add');
+        noteFormView.display();
+    },
+    init(){
+        console.log("Initialisation du menu")
+        document.querySelector('#add').onclick = this.addHandler;
+        document.querySelector('#form_add_note_valid').onclick = noteFormView.validate;
+    }
+}
+
+
+/*
+--- Objet etatGlobal ---
+ */
+let etatGlobal = {
+    //listNote : null,
+    //indexNoteCourante : null,
+
+    init(){
+        mainMenuView.init();
+        /*etatGlobal.listNote = new NoteList();
+        document.querySelector('#noteListMenu').onclick =
+            function (e){
+                let nodes = e.currentTarget.childNodes;
+                for(let i = 0; i < nodes.length ; i++){
+                    nodes[i].classList.remove('note_list_item-selected');
+                    if(nodes[i] === e.target){
+                        let note = etatGlobal.listNote.getNoteById(i);
+                        let vueNote = new NoteView(note);
+                        vueNote.afficher();
+                    }
+                }
+                e.target.classList.add('note_list_item-selected');
+
+            };*/
+    }
+}
+
+
+window.onload = etatGlobal.init;
