@@ -1,3 +1,5 @@
+import cart from "./cart.js";
+
 let displayProducts = (product) => {
   // élément div pour contenir le produit
   const productDiv = document.createElement('div');
@@ -17,6 +19,9 @@ let displayProducts = (product) => {
   const addToCartBtn = document.createElement('a');
   addToCartBtn.classList.add('product-add2cart');
   photoDiv.appendChild(addToCartBtn);
+  addToCartBtn.addEventListener("click", function () {
+    cart.addToCart(product.ref)
+  })
 
   // élément span pour l'icône du panier
   const cartIcon = document.createElement('span');
