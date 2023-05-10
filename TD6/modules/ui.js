@@ -71,13 +71,15 @@ let buildProductList = (products) => {
 }
 
 let displayCart = () => {
-  const parent = document.querySelector("#cart-content");
-  parent.innerHTML = "";
+  // --- Update cart content ---
+  const cartContent = document.querySelector("#cart-content");
+  cartContent.innerHTML = "";
 
   cart.content.forEach((elt) => {
     const lineTr = document.createElement('tr');
-    parent.appendChild(lineTr);
+    cartContent.appendChild(lineTr);
 
+    //TODO : use map and reduce
     for (const prop in elt)
     {
       const col = document.createElement('td');
@@ -85,10 +87,12 @@ let displayCart = () => {
       col.innerHTML = elt[prop];
       lineTr.appendChild(col);
     }
+  });
 
+  // --- Update cart total ---
+  const cartTotal = document.querySelector("#cart-total");
+  cartTotal.innerHTML = cart.totalCart() + " €";
 
-
-  })
 }
 
 export default {
