@@ -1,10 +1,10 @@
 let productsList = [
-    { ref: 1, desc: 'Product 1', price: 100 },
-    { ref: 2, desc: 'Product 2', price: 200 },
-    { ref: 3, desc: 'Product 3', price: 300 },
-    { ref: 4, desc: 'Product 4', price: 400 },
-    { ref: 5, desc: 'Product 5', price: 500 },
-    { ref: 6, desc: 'Product 6', price: 600 },
+    { ref: "REF1", price: "250,29" , desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    { ref: "REF2", price: "129,25", desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    { ref: "REF3", price: "18,10", desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    { ref: "REF4", price: "180,12", desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    { ref: "REF5", price: "318,50", desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+    { ref: "REF6", price: "50,35", desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
   ];
 
 export default {
