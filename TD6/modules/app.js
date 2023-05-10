@@ -3,6 +3,7 @@ import ui from "./ui.js";
 
 export const init = () => {
   ui.buildProductList(products.list);
+  ui.displayCart();
 
   document.addEventListener('keyup', (event) => {
     document.querySelector('#product-list').innerHTML = '';

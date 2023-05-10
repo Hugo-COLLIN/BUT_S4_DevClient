@@ -20,7 +20,8 @@ let displayProducts = (product) => {
   addToCartBtn.classList.add('product-add2cart');
   photoDiv.appendChild(addToCartBtn);
   addToCartBtn.addEventListener("click", function () {
-    cart.addToCart(product.ref)
+    cart.add(product.ref);
+    displayCart();
   })
 
   // élément span pour l'icône du panier
@@ -58,16 +59,6 @@ let displayProducts = (product) => {
   descriptionDiv.textContent = product.desc;
   detailsDiv.appendChild(descriptionDiv);
 
-  // // titre h2 pour le nom du produit
-  // const productName = document.createElement('h2');
-  // productName.textContent = product.name;
-  // productDiv.appendChild(productName);
-  //
-  // // élément p pour le prix du produit
-  // const productPrice = document.createElement('p');
-  // productPrice.textContent = product.price;
-  // productDiv.appendChild(productPrice);
-
   // Retourne l'élément productDiv pour pouvoir l'ajouter au DOM principal
   return productDiv;
 }
@@ -79,6 +70,28 @@ let buildProductList = (products) => {
   });
 }
 
+let displayCart = () => {
+  const parent = document.querySelector("#cart-content");
+  parent.innerHTML = "";
+
+  cart.content.forEach((elt) => {
+    const lineTr = document.createElement('tr');
+    parent.appendChild(lineTr);
+
+    for (const prop in elt)
+    {
+      const col = document.createElement('td');
+      col.setAttribute("data-type", prop);
+      col.innerHTML = elt[prop];
+      lineTr.appendChild(col);
+    }
+
+
+
+  })
+}
+
 export default {
   buildProductList,
+  displayCart
 }

@@ -8,5 +8,6 @@ let addToCart = (product) => {
 }
 
 export default {
-  addToCart: addToCart
+  content: cartContent,
+  add: addToCart
 }
