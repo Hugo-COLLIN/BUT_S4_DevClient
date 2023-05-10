@@ -17,8 +17,9 @@ let displayProducts = (product) => {
 }
 
 let buildProductList = (products) => {
+  const productsDiv = document.querySelector('#product-list');
   products.forEach((product) => {
-    displayProducts(product);
+    productsDiv.appendChild(displayProducts(product));
   });
 }
 

@@ -1,6 +1,6 @@
-import products from "./products";
-import ui from "./ui";
+import products from "./products.js";
+import ui from "./ui.js";
 
-const init = () => {
+export const init = () => {
   ui.buildProductList(products.list);
 }
