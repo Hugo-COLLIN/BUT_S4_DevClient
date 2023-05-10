@@ -8,5 +8,5 @@ let productsList = [
   ];
 
 export default {
-  products: productsList,
+  list: productsList,
 }
