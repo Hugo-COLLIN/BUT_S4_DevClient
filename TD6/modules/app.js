@@ -6,9 +6,13 @@ export const init = () => {
   ui.displayCart();
 
   document.addEventListener('keyup', (event) => {
-    document.querySelector('#product-list').innerHTML = '';
     const keywords = event.target.value;
-    const productsList = products.search(keywords);
-    ui.buildProductList(productsList);
+    console.log(keywords)
+    if (keywords !== "" && keywords !== undefined)
+    {
+      document.querySelector('#product-list').innerHTML = '';
+      const productsList = products.search(keywords);
+      ui.buildProductList(productsList);
+    }
   });
 }
