@@ -20,7 +20,7 @@ let displayProducts = (product) => {
   addToCartBtn.classList.add('product-add2cart');
   photoDiv.appendChild(addToCartBtn);
   addToCartBtn.addEventListener("click", function () {
-    cart.add(product.ref);
+    cart.add(product);
     displayCart();
   })
 
@@ -91,7 +91,10 @@ let displayCart = () => {
 
   // --- Update cart total ---
   const cartTotal = document.querySelector("#cart-total");
-  cartTotal.innerHTML = cart.totalCart() + " €";
+  cartTotal.innerHTML = cart.totalCart().cost + " €";
+
+  const cartNbProducts = document.querySelector('#total-products');
+  cartNbProducts.innerHTML = cart.totalCart().qty + "";
 
 }
 

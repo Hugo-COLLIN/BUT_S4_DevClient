@@ -7,7 +7,6 @@ export const init = () => {
 
   document.addEventListener('keyup', (event) => {
     const keywords = event.target.value;
-    console.log(keywords)
     if (keywords !== "" && keywords !== undefined)
     {
       document.querySelector('#product-list').innerHTML = '';
