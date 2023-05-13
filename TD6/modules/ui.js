@@ -84,8 +84,6 @@ let displayCart = () => {
     {
       const col = document.createElement('td');
       col.setAttribute("data-type", prop);
-      console.log(typeof elt[prop])
-      console.log(typeof elt[prop] === "number")
       if (typeof elt[prop] === "number") col.innerHTML = elt[prop].toString().replace(".", ",");
       else col.innerHTML = elt[prop];
       lineTr.appendChild(col);

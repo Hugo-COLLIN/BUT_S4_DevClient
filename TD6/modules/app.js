@@ -1,5 +1,6 @@
 import products from "./products.js";
 import ui from "./ui.js";
+import cart from "./cart.js";
 
 export const init = () => {
   ui.buildProductList(products.list);
@@ -14,4 +15,9 @@ export const init = () => {
       ui.buildProductList(productsList);
     }
   });
+
+  document.querySelector("#empty-cart").addEventListener('click', () => {
+    cart.empty();
+    ui.displayCart();
+  })
 }

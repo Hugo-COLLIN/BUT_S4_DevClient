@@ -1,6 +1,6 @@
 const cartContent = [];
 
-let addToCart = (product) => {
+const addToCart = (product) => {
   const matchCart = (elt) => elt.productName === product.ref;
   let res = cartContent.filter(matchCart);
   res.length === 0 ? cartContent.push({productName: product.ref, qty: 1, totalPrice: product.price}) : (res[0].qty ++, res[0].totalPrice += product.price ) ;
@@ -17,8 +17,13 @@ const genericCalc = () => {
   return {cost, qty};
 }
 
+const emptyCart = () => {
+  cartContent.length = 0;
+}
+
 export default {
   content: cartContent,
   add: addToCart,
-  totalCart: genericCalc
+  totalCart: genericCalc,
+  empty: emptyCart
 }
