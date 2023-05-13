@@ -3,8 +3,13 @@ import ui from "./ui.js";
 import cart from "./cart.js";
 
 export const init = () => {
+  // cart.init();
   ui.buildProductList(products.list);
   ui.displayCart();
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   cart.init();
+  //   ui.displayCart();
+  // });
 
   document.addEventListener('keyup', (event) => {
     const keywords = event.target.value;
@@ -19,5 +24,12 @@ export const init = () => {
   document.querySelector("#empty-cart").addEventListener('click', () => {
     cart.empty();
     ui.displayCart();
-  })
+  });
+
+  // document.querySelector('.product-add2cart').forEach( (btn) => {
+  //   btn.addEventListener("click", function () {
+  //     cart.add(product);
+  //     displayCart();
+  //   });
+  // });
 }
