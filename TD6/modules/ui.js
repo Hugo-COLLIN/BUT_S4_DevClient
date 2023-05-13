@@ -50,7 +50,7 @@ let displayProducts = (product) => {
   const price = document.createElement('strong');
   price.classList.add('bigger');
   price.dataset.type = 'price';
-  price.textContent = product.price + ` €`;
+  price.textContent = product.price.toString().replace(".", ",") + ` €`;
   detailsTopDiv.appendChild(price);
 
   // élément div pour la description du produit
@@ -84,17 +84,21 @@ let displayCart = () => {
     {
       const col = document.createElement('td');
       col.setAttribute("data-type", prop);
-      col.innerHTML = elt[prop];
+      console.log(typeof elt[prop])
+      console.log(typeof elt[prop] === "number")
+      if (typeof elt[prop] === "number") col.innerHTML = elt[prop].toString().replace(".", ",");
+      else col.innerHTML = elt[prop];
       lineTr.appendChild(col);
     }
   });
 
   // --- Update cart total ---
+  const t = cart.totalCart()
   const cartTotal = document.querySelector("#cart-total");
-  cartTotal.innerHTML = cart.totalCart().cost + " €";
+  cartTotal.innerHTML = t.cost.replace(".", ",") + " €";
 
   const cartNbProducts = document.querySelector('#total-products');
-  cartNbProducts.innerHTML = cart.totalCart().qty + "";
+  cartNbProducts.innerHTML = t.qty.toString();
 
 }
 

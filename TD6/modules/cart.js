@@ -12,7 +12,6 @@ const genericCalc = () => {
   cartContent.forEach((productTypeInCart) => {
     cost += productTypeInCart.totalPrice;
     qty += productTypeInCart.qty;
-    console.log(productTypeInCart);
   });
   cost = cost.toFixed(2);
   return {cost, qty};
