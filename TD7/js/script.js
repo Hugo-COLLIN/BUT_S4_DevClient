@@ -37,7 +37,23 @@ function bookDetails(noBook)
           });
           const d = new Date(res.released);
           print += "Pages: " + res.numberOfPages + "\nPublisher: " + res.publisher + "\nReleased : " + String(d.getDate()).padStart(2, '0') + "/" + String(d.getMonth() + 1).padStart(2, '0') + "/" + d.getFullYear();
-          console.log(print);
+
+          print += "\nFirst character:\n"
+          fetch(res.characters[0])
+            .then((respC) => {
+              if (respC.ok) {
+                respC.json().then(character => {
+                  print += "\tName: " + character.name + "\n\tGender: " + character.gender + "\n\tPlayed by: ";
+                  character.playedBy.forEach(actor => {
+                    print += "\n\t\t - " + actor;
+                  })
+                  console.log(print)
+                })
+              }
+            })
+            .catch(err => {
+              console.log(err);
+            });
         })
       }
     })
