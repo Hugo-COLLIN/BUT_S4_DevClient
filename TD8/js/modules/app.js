@@ -1,7 +1,7 @@
 import photoloader from "./photoloader.js";
 
-export async function getPicture(id) {
-  let picture = await photoloader.loadPicture(id);
+export function getPicture(id) {
+  let picture = photoloader.loadPicture(id);
   return picture;
 }
 
