@@ -1,4 +1,4 @@
-import {getPicture, getImageCategory} from "./modules/app.js";
+import {getPicture, getImageCategory, getImageComments} from "./modules/app.js";
 import ui from "./modules/ui.js";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,9 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(picture.photo.titre);
     console.log(picture.photo.url.href);
     console.log(picture.type);
+
     ui.displayPicture(picture);
     getImageCategory(picture).then( (category) => {
       ui.displayCateg(category);
+    });
+    getImageComments(picture).then( (comments) => {
+      ui.displayComments(comments);
     });
   });
 });

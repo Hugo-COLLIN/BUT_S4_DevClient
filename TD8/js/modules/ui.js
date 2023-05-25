@@ -21,7 +21,18 @@ function displayCateg(categ)
   document.querySelector("#la_categorie").innerHTML = "Catégorie: " + categ.categorie.nom;
 }
 
+function displayComments(comments)
+{
+  const commentsElt = document.querySelector("#les_commentaires");
+  comments.comments.forEach(comment => {
+    commentsElt.innerHTML += "<li>" + comment.pseudo + " : " + comment.content + "</li><br>";
+  });
+  // console.log(comments)
+  // document.querySelector("#la_categorie").innerHTML = "Catégorie: " + comments.categorie.nom;
+}
+
 export default {
   displayPicture: displayPicture,
-  displayCateg: displayCateg
+  displayCateg: displayCateg,
+  displayComments: displayComments
 }

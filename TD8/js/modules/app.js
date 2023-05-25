@@ -11,6 +11,12 @@ export async function getImageCategory(imageData) {
   return categoryData;
 }
 
+export async function getImageComments(imageData) {
+  const uri = imageData.links.comments.href;
+  const commentsData = await photoloader.loadResource(uri);
+  return commentsData;
+}
+
 export default {
   getPicture: getPicture
 }
