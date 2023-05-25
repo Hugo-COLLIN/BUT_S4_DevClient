@@ -13,6 +13,20 @@ async function loadPicture(idPicture) {
   }
 }
 
+async function loadResource(uri) {
+  try {
+    const response = await fetch(config.URLbase + uri, { credentials: 'include' });
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    }
+    const jsonData = await response.json();
+    return jsonData;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export default {
-  loadPicture: loadPicture
+  loadPicture: loadPicture,
+  loadResource: loadResource
 }
