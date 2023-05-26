@@ -3,9 +3,25 @@ import gallery_ui from "./modules/gallery_ui.js";
 import gallery from "./modules/gallery.js";
 
 document.querySelector("#load_gallery").addEventListener("click", () => {
-  gallery.load().then((gallery) => {
-    console.log(gallery);
-    gallery_ui.displayGallery(gallery);
+  gallery.load().then((galleryInit) => {
+    console.log(galleryInit);
+    gallery_ui.displayGallery(galleryInit);
+
+    document.querySelector("#previous_page").addEventListener("click", () => {
+      gallery.loadPrev(galleryInit).then((galleryPrev) => {
+        console.log(galleryPrev);
+        gallery_ui.displayGallery(galleryPrev);
+      });
+    });
+
+    document.querySelector("#next_page").addEventListener("click", () => {
+      gallery.loadNext(galleryInit).then((galleryNext) => {
+        console.log(galleryNext);
+        gallery_ui.displayGallery(galleryNext);
+      });
+    });
+
+
   });
 });
 
