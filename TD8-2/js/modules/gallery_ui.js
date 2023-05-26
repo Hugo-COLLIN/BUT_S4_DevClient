@@ -2,6 +2,7 @@ import config from "./config.js";
 
 function displayGallery(gallery) {
   const photosElt = document.querySelector("#gallery_container");
+  photosElt.innerHTML = "";
   gallery.photos.forEach(photo => {
     photosElt.innerHTML += `
     <div class="vignette" >
