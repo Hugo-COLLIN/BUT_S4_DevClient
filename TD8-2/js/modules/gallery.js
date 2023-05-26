@@ -1,25 +1,39 @@
 import photoloader from "./photoloader.js";
 
-async function load() {
+async function loadDefault() {
   const uri = "/www/canals5/phox/api/photos";
-  const gallery = await photoloader.loadResource(uri);
-  return gallery;
+  return load(uri);
 }
 
 async function loadPrev(gallery) {
   const uri = gallery.links.prev.href;
-  const galleryPrev = await photoloader.loadResource(uri);
-  return galleryPrev;
+  return load(uri);
 }
 
 async function loadNext(gallery) {
   const uri = gallery.links.next.href;
-  const galleryNext = await photoloader.loadResource(uri);
-  return galleryNext;
+  return load(uri);
+}
+
+async function loadFirst(gallery) {
+  const uri = gallery.links.first.href;
+  return load(uri);
+}
+
+async function loadLast(gallery) {
+  const uri = gallery.links.last.href;
+  return load(uri);
+}
+
+async function load(uri)
+{
+  return await photoloader.loadResource(uri);
 }
 
 export default {
-  load: load,
+  load: loadDefault,
   loadPrev: loadPrev,
-  loadNext: loadNext
+  loadNext: loadNext,
+  loadFirst: loadFirst,
+  loadLast: loadLast
 }

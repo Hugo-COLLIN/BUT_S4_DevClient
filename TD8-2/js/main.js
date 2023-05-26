@@ -10,6 +10,7 @@ document.querySelector("#load_gallery").addEventListener("click", () => {
     document.querySelector("#previous_page").addEventListener("click", () => {
       gallery.loadPrev(galleryInit).then((galleryPrev) => {
         console.log(galleryPrev);
+        galleryInit = galleryPrev;
         gallery_ui.displayGallery(galleryPrev);
       });
     });
@@ -17,7 +18,24 @@ document.querySelector("#load_gallery").addEventListener("click", () => {
     document.querySelector("#next_page").addEventListener("click", () => {
       gallery.loadNext(galleryInit).then((galleryNext) => {
         console.log(galleryNext);
+        galleryInit = galleryNext;
         gallery_ui.displayGallery(galleryNext);
+      });
+    });
+
+    document.querySelector("#first_page").addEventListener("click", () => {
+      gallery.loadFirst(galleryInit).then((galleryFirst) => {
+        console.log(galleryFirst);
+        galleryInit = galleryFirst;
+        gallery_ui.displayGallery(galleryFirst);
+      });
+    });
+
+    document.querySelector("#last_page").addEventListener("click", () => {
+      gallery.loadLast(galleryInit).then((galleryLast) => {
+        console.log(galleryLast);
+        galleryInit = galleryLast;
+        gallery_ui.displayGallery(galleryLast);
       });
     });
 
