@@ -1,4 +1,4 @@
-import {getPicture, getImageCategory, getImageComments} from "./modules/app.js";
+import {getPicture, getImageCategory, getImageComments} from "./modules/index.js";
 import ui from "./modules/ui.js";
 
 document.addEventListener('DOMContentLoaded', () => {

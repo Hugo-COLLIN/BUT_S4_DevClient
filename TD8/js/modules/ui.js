@@ -11,8 +11,6 @@ function displayPicture(img)
   document.querySelector("#la_photo > h4").innerHTML = img.photo.titre;
   document.querySelector("#la_photo > p:nth-of-type(1)").innerHTML = img.photo.descr;
   document.querySelector("#la_photo > p:nth-of-type(2)").innerHTML = img.photo.type + ", " + img.photo.width + "x" + img.photo.height;
-  // document.querySelector("#la_categorie").innerHTML = "Catégorie: " + img.links.categorie.href;
-  // document.querySelector("#les_commentaires").innerHTML = "Catégorie: " + img.links.categorie.href;
 }
 
 function displayCateg(categ)
@@ -27,8 +25,6 @@ function displayComments(comments)
   comments.comments.forEach(comment => {
     commentsElt.innerHTML += "<li>" + comment.pseudo + " : " + comment.content + "</li><br>";
   });
-  // console.log(comments)
-  // document.querySelector("#la_categorie").innerHTML = "Catégorie: " + comments.categorie.nom;
 }
 
 export default {
