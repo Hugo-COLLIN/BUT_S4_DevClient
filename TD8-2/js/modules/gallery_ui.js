@@ -19,6 +19,7 @@ function displayGallery(gallery) {
 
     imgElement.addEventListener("click", () => {
       console.log(photo.links.self.href);
+      document.querySelector("#image-view > img").src = "";
       document.querySelector("#image-view > img").src = config.URLbase + photo.photo.original.href;
       document.querySelector("#image-container > h2").innerHTML = photo.photo.titre;
     });
