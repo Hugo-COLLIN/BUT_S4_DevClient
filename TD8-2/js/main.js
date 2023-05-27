@@ -1,6 +1,7 @@
-import {getPicture, getImageCategory, getImageComments} from "./modules/app.js";
+import {getPicture, getImageCategory, getImageComments} from "./modules/index.js";
 import gallery_ui from "./modules/gallery_ui.js";
 import gallery from "./modules/gallery.js";
+
 
 document.querySelector("#load_gallery").addEventListener("click", () => {
   gallery.load().then((galleryInit) => {

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"   href="css/index.css">
+
+    <title>photobox</title>
+</head>
+<body>
+
+<nav>
+  <div class="buttons">
+
+    <button id="first_page">first </button>
+    <button id="previous_page">prev </button>
+    <button id="load_gallery">load</button>
+    <button id="next_page">next </button>
+    <button id="last_page">last </button>
+
+  </div>
+<!--  <div class="pagesize">-->
+<!--    <label for="page_size_input">taille des pages : </label><input id="page_size_input"  type="number" value="10">-->
+<!--  </div>-->
+</nav>
+
+
+<main>
+  <section id="gallery">
+
+    <div class="gallery-container" id="gallery_container">
+
+      <div class="vignette" >
+        <img data-photoId="100"
+             src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38dc3123d.jpg">
+      </div>
+
+      <div class="vignette" >
+        <img data-photoId="101"
+             src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38dbc84ac.jpg">
+      </div>
+
+      <div class="vignette">
+        <img data-photoId="102"
+             src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38db67677.jpg">
+      </div>
+
+      <div class="vignette">
+        <img data-photoId="103"
+             src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38db0444d.jpg">
+      </div>
+
+      <div class="vignette">
+        <img data-photoId="104"
+             src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38daa09e8.jpg">
+      </div>
+
+    </div>
+
+    </div>
+
+  </section>
+
+  <section id="image-container">
+    <h2>titre</h2>
+    <div id="image-view">
+      <img src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/phox/img/small/img_586d38daa09e8.jpg">
+    </div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

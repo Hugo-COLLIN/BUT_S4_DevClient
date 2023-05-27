@@ -5,8 +5,8 @@ function displayPicture(img)
 {
   console.log(img)
   console.log(config.URLbase + "/" + img.photo.url.href);
+  document.querySelector("#image-view > img").src = config.URLbase + "/" + img.photo.url.href;
   document.querySelector("#photo > h1").innerHTML = "Photo: " + img.photo.id;
-  document.querySelector("#la_photo > img").src = config.URLbase + "/" + img.photo.url.href;
   document.querySelector("#la_photo > h4").innerHTML = img.photo.titre;
   document.querySelector("#la_photo > h4").innerHTML = img.photo.titre;
   document.querySelector("#la_photo > p:nth-of-type(1)").innerHTML = img.photo.descr;
