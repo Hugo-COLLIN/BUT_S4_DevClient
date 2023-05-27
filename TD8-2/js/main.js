@@ -4,6 +4,14 @@ import gallery from "./modules/gallery.js";
 
 
 document.querySelector("#load_gallery").addEventListener("click", () => {
+  loadGallery();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadGallery();
+});
+
+function loadGallery() {
   gallery.load().then((galleryInit) => {
     console.log(galleryInit);
     gallery_ui.displayGallery(galleryInit);
@@ -42,7 +50,7 @@ document.querySelector("#load_gallery").addEventListener("click", () => {
 
 
   });
-});
+}
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   // gallery.load().then( (gallery) => {
