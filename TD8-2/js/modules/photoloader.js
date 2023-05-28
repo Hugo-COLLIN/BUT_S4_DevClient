@@ -6,8 +6,7 @@ async function loadPicture(idPicture) {
     if (!response.ok) {
       throw new Error("Network response was not OK");
     }
-    const jsonData = await response.json();
-    return jsonData;
+    return await response.json();
   } catch (error) {
     console.error(error);
   }
@@ -19,8 +18,7 @@ async function loadResource(uri) {
     if (!response.ok) {
       throw new Error("Network response was not OK");
     }
-    const jsonData = await response.json();
-    return jsonData;
+    return await response.json();
   } catch (error) {
     console.error(error);
   }

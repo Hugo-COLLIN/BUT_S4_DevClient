@@ -14,18 +14,18 @@ img {
     text-align: center;
     background-color: #000;
     padding-bottom: 2em;
+    height: 99vh;
 }
 
-#image-container h2 {
+#viewer-head > * {
     color: #fff;
+    font-size: 2em!important;
 }
 
 #image-view {
     display: flex;
-    /*flex-direction: column;*/
-    /*flex-wrap: wrap;*/
     justify-content: center;
-    height: 90vh;
+    height: 80vh;
 
 }
 
@@ -45,6 +45,23 @@ img {
 .hidden {
     display: none;
 }
+
+#viewer {
+    display:none;
+}
+
+#viewer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0 2em;
+}
+
+#close-viewer {
+    cursor: pointer;
+}
+
 
 /*#image-view {*/
 /*    display: none;*/

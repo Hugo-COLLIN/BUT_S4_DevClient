@@ -1,7 +1,11 @@
 import {getPicture, getImageCategory, getImageComments} from "./modules/index.js";
 import gallery_ui from "./modules/gallery_ui.js";
 import gallery from "./modules/gallery.js";
+import ui from "./modules/ui.js";
 
+document.querySelector("#close-viewer").addEventListener("click", () => {
+  ui.displayGallery();
+});
 
 document.querySelector("#load_gallery").addEventListener("click", () => {
   loadGallery();

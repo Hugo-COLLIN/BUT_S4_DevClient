@@ -9,24 +9,22 @@
 </head>
 <body>
 
-<nav>
-  <div class="buttons">
-
-    <button id="first_page">first </button>
-    <button id="previous_page">prev </button>
-    <button id="load_gallery">load</button>
-    <button id="next_page">next </button>
-    <button id="last_page">last </button>
-
-  </div>
-<!--  <div class="pagesize">-->
-<!--    <label for="page_size_input">taille des pages : </label><input id="page_size_input"  type="number" value="10">-->
-<!--  </div>-->
-</nav>
-
-
 <main>
   <section id="gallery">
+    <nav>
+      <div class="buttons">
+
+        <button id="first_page">first </button>
+        <button id="previous_page">prev </button>
+        <button id="load_gallery">load</button>
+        <button id="next_page">next </button>
+        <button id="last_page">last </button>
+
+      </div>
+      <!--  <div class="pagesize">-->
+      <!--    <label for="page_size_input">taille des pages : </label><input id="page_size_input"  type="number" value="10">-->
+      <!--  </div>-->
+    </nav>
 
     <div class="gallery-container" id="gallery_container"></div>
 
@@ -34,7 +32,11 @@
 
   <section id="viewer">
     <section id="image-container">
-      <h2>titre</h2>
+      <div id="viewer-head">
+        <a id="close-viewer">x</a>
+        <h2>titre</h2>
+        <span></span>
+      </div>
       <div id="image-view">
         <img src="">
         <!--      <img id="loadingGif" src="img/load.gif">-->
