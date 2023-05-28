@@ -57,15 +57,17 @@ img {
  */
 #viewer {
     display:none;
+    max-height: 100vh!important;
+    background-color: #000;
+    height: 100vh;
 }
 
 #image-container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #000;
     padding-bottom: 2em;
-    height: 99vh;
+    height: 100%; /* Necessary for the image not to be distorted */
 }
 
 /*
@@ -95,7 +97,7 @@ img {
     max-height: 80vh;
     display: flex;
     justify-content: center;
-    background-image: url("../img/load.gif");
+    background-image: url("../assets/load.gif");
     background-repeat: no-repeat;
     background-position: center;
 }
