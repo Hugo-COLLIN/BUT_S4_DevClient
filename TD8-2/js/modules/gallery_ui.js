@@ -12,8 +12,9 @@ function displayGallery(gallery) {
     vignetteDiv.classList.add("vignette");
 
     const imgElement = document.createElement("img");
-    imgElement.setAttribute("data-photoId", photo.photo.id);
     imgElement.src = config.URLbase + photo.photo.thumbnail.href;
+    imgElement.setAttribute("data-photoId", photo.photo.id);
+    imgElement.setAttribute("draggable", "false");
 
     imgElement.addEventListener("click", () => {
       ui.displayPicture(photo);
