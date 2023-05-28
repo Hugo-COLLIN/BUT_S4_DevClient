@@ -16,7 +16,7 @@
 
         <button id="first_page">&lt&lt </button>
         <button id="previous_page">&lt </button>
-        <button id="load_gallery">↻ Load</button>
+        <button id="load_gallery">&#8635 Load</button>
         <button id="next_page">&gt </button>
         <button id="last_page">&gt&gt </button>
 
@@ -26,19 +26,21 @@
       <!--  </div>-->
     </nav>
 
-    <div class="gallery-container" id="gallery_container"></div>
+    <div class="gallery-container" id="gallery_container">
+      <div class="vignette"></div>
+    </div>
 
   </section>
 
   <section id="viewer">
     <div id="image-container">
       <div id="viewer-head">
-        <a id="close-viewer">x</a>
+        <span id="close-viewer">x</span>
         <h2>titre</h2>
         <span></span>
       </div>
       <div id="image-view">
-        <img src="">
+        <img src="" alt="Fullscreen image view">
       </div>
     </div>
   </section>

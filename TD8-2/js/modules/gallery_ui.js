@@ -11,9 +11,6 @@ function displayGallery(gallery) {
     const vignetteDiv = document.createElement("div");
     vignetteDiv.classList.add("vignette");
 
-    const imgLink = document.createElement("a");
-    imgLink.href = "#";
-
     const imgElement = document.createElement("img");
     imgElement.setAttribute("data-photoId", photo.photo.id);
     imgElement.src = config.URLbase + photo.photo.thumbnail.href;
@@ -22,8 +19,7 @@ function displayGallery(gallery) {
       ui.displayPicture(photo);
     });
 
-    vignetteDiv.appendChild(imgLink);
-    imgLink.appendChild(imgElement);
+    vignetteDiv.appendChild(imgElement);
     photosElt.appendChild(vignetteDiv);
   });
 }

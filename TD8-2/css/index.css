@@ -28,6 +28,7 @@ img {
 
 .buttons > * {
     margin: 0.5em;
+    padding: 0.5em 1em;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
@@ -45,6 +46,10 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.vignette {
+    cursor: pointer;
 }
 
 /*
