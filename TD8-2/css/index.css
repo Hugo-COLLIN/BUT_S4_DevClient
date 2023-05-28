@@ -1,6 +1,15 @@
 /*
 --- GLOBAL ---
  */
+* {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -66,7 +75,6 @@ img {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-bottom: 2em;
     height: 100%; /* Necessary for the image not to be distorted */
 }
 
@@ -104,4 +112,6 @@ img {
 
 #image-view > img {
     margin: 0 auto;
+    /*user-select: none;*/
+    /*user-drag: none;*/
 }
