@@ -8,7 +8,7 @@ body {
 
 img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
 }
 
 /*
@@ -92,10 +92,9 @@ img {
 --- > VIEWER CONTENT ---
  */
 #image-view {
+    max-height: 80vh;
     display: flex;
     justify-content: center;
-    height: 80vh;
-
     background-image: url("../img/load.gif");
     background-repeat: no-repeat;
     background-position: center;
@@ -103,6 +102,4 @@ img {
 
 #image-view > img {
     margin: 0 auto;
-    height: 100%;
-    width: auto;
 }
