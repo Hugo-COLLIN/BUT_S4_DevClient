@@ -62,6 +62,11 @@ img {
     cursor: pointer;
 }
 
+#image-view {
+    background-image: url("../img/load.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /*#image-view {*/
 /*    display: none;*/
