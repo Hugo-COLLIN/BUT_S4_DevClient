@@ -4,12 +4,10 @@ import ui from "./ui.js";
 function displayGallery(gallery) {
   const photosElt = document.querySelector("#gallery_container");
   photosElt.innerHTML = "";
-  console.log(photosElt);
-  gallery.photos.forEach(photo => {
-    console.log(photo);
 
+  gallery.photos.forEach(photo => {
     const vignetteDiv = document.createElement("div");
-    vignetteDiv.classList.add("vignette");
+    vignetteDiv.classList.add("thumbnail");
 
     const imgElement = document.createElement("img");
     imgElement.src = config.URLbase + photo.photo.thumbnail.href;

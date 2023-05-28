@@ -1,6 +1,5 @@
 import config from "./config.js";
 
-
 function displayPicture(photo)
 {
   document.querySelector("#gallery").style.display = "none";

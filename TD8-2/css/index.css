@@ -57,7 +57,7 @@ img {
     justify-content: space-around;
 }
 
-.vignette {
+.thumbnail {
     cursor: pointer;
 }
 
@@ -114,4 +114,13 @@ img {
     margin: 0 auto;
     /*user-select: none;*/
     /*user-drag: none;*/
+}
+
+/*
+--- FOOTER ---
+ */
+footer {
+    display: flex;
+    /*padding: 0.5em;*/
+    margin: 1em 2.5em;
 }
