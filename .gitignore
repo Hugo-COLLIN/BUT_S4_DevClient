@@ -48,3 +48,5 @@ composer.json
 out
 .target
 .idea/
+
+node_modules/
