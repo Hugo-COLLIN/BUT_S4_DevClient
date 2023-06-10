@@ -41,6 +41,9 @@ vendor/
 composer.lock
 composer.json
 
+# Node and packages
+node_modules/
+output/
 
 #intelliJ
 *.iml
@@ -48,5 +51,3 @@ composer.json
 out
 .target
 .idea/
-
-node_modules/
